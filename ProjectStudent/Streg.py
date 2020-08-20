@@ -147,7 +147,7 @@ def start2com():
 #creating the class for managing the mysql database
 class DBhelper:
     def __init__(self):
-        self.connect = connector.connect(host="localhost", port="3306", user= "root", password= "IlTd7084@",database="Studentsdata")
+        self.connect = connector.connect(host="localhost", port="3306", user= "root", password= "password",database="Studentsdata")
         print("Connected")
         query = "create table if not exists student(name varchar(30),class varchar(2), mobile varchar(13),address varchar(300))"
         cur = self.connect.cursor()
@@ -214,7 +214,7 @@ class DBhelper:
 def sendsms(number):
     url="https://api.textlocal.in/send/?"
     para= {
-        "apikey":"bQZAEIOH1JE-3Ix4AsojqibCuw8iKPmL084D4kH6Aj",
+        "apikey":"your api key",
         "sender":"TXTLCL",
         "message":"Your registration has been succesfully completed with EDN institute",
         #"language":"english",
