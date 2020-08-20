@@ -54,6 +54,7 @@ def buttC():
     global op
     op = ""
     textinput.set(op)
+    
     textresult.set(op)
 
 def buttEq() :
