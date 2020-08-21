@@ -172,7 +172,11 @@ class streg():
 #creating the class for managing the mysql database
 class DBhelper(streg):
     def __init__(self):
+<<<<<<< HEAD
         self.connect = connector.connect(host="localhost", port="3306", user= "root", password= "xxxxx",database="Studentsdata")
+=======
+        self.connect = connector.connect(host="localhost", port="3306", user= "root", password= "password",database="Studentsdata")
+>>>>>>> 765c3452bf58afab545943bcfc16e07d87a81347
         print("Connected")
         query = "create table if not exists student(name varchar(30),class varchar(2), mobile varchar(13),address varchar(300))"
         cur = self.connect.cursor()
@@ -231,6 +235,7 @@ class DBhelper(streg):
                 #"Mobile : ", row[2]
                 #"Address :", row[3]"
 
+<<<<<<< HEAD
 stu = streg()
 
 
@@ -238,6 +243,23 @@ stu = streg()
 
 
 
+=======
+#function tosend SMS
+def sendsms(number):
+    url="https://api.textlocal.in/send/?"
+    para= {
+        "apikey":"your api key",
+        "sender":"TXTLCL",
+        "message":"Your registration has been succesfully completed with EDN institute",
+        #"language":"english",
+        #"route":"p",
+        "numbers":number
+        
+    }
+    response = requests.get(url,params=para)
+    dic = response.json()
+    print(dic)
+>>>>>>> 765c3452bf58afab545943bcfc16e07d87a81347
 
 
 
